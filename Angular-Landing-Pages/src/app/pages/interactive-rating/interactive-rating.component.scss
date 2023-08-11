@@ -1,0 +1,127 @@
+$Orange: hsl(25, 97%, 53%);
+$Light-Grey: hsl(217, 12%, 63%);
+$Medium-Grey: hsl(216, 12%, 54%);
+$Dark-Blue: hsl(213, 19%, 18%);
+$Very-Dark-Blue: hsl(216, 12%, 8%);
+
+.main__container {
+  font-family: "Overpass", sans-serif;
+  font-size: 15px;
+  background-color:$Very-Dark-Blue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.rating__container {
+  background-image: linear-gradient(
+    to bottom,
+    hsl(212, 18%, 14%),
+    hsl(220, 16%, 11%)
+  );
+  max-width: 400px;
+  color: white;
+  border-radius: 20px;
+  padding: 2rem;
+
+  h3{
+    margin-top: 2rem;
+    font-weight: 700;
+  }
+
+  p{
+    color: $Medium-Grey;
+    font-size: 15px;
+    font-weight: 400;
+  }
+
+  & img {
+    background-color: hsl(213, 19%, 18%);
+    border-radius: 50%;
+    padding: 1rem;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    text-align: center;
+    gap: 1rem;
+
+    li {
+      background-color: hsl(213, 19%, 18%);
+      border-radius: 50%;
+      padding: 1rem;
+
+
+      &:hover {
+        background-color: $Orange;
+        cursor: pointer;
+      }
+
+      &.active {
+        background-color: $Light-Grey;
+        cursor: pointer;
+      }
+
+    }
+  }
+
+  & .submit__btn {
+    color: #fff;
+    width: 100%;
+    background-color: $Orange;
+    border: none;
+    padding: 0.8rem 0;
+    border-radius: 26px;
+    margin-top: 1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+
+    &:hover{
+      background-color: white;
+      color: $Orange;
+    }
+  }
+}
+
+.result__container {
+  background-image: linear-gradient(
+      to bottom,
+      hsl(212, 18%, 14%),
+      hsl(220, 16%, 11%)
+  );
+  max-width: 400px;
+  color: white;
+  border-radius: 20px;
+  padding: 2rem;
+  text-align: center;
+
+  & .thanks {
+    display: block;
+    margin: 0 auto;
+  }
+
+  .result__rating{
+    background-color: $Dark-Blue;
+    color: $Orange;
+    text-align: center;
+    width: 58%;
+    margin: 1.5rem auto 0;
+    border-radius: 25px;
+    padding: 0.2rem 0;
+  }
+
+  h3{
+    margin: 1.5rem 0 1rem;
+    font-weight: 700;
+  }
+
+  .result__text{
+    color: $Light-Grey;
+    font-size: 15px;
+    font-weight: 400;
+  }
+}

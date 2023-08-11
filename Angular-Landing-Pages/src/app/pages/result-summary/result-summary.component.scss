@@ -1,0 +1,210 @@
+$Light-red: #FF7474;
+$Orangey-yellow: #FFCB6B;
+$Green-teal: #56D3B5;
+$Cobalt-blue: #1125D4;
+
+$Light-slate-blue-background: hsl(252, 100%, 67%);
+$Light-royal-blue-background: hsl(241, 81%, 54%);
+$Violet-blue-circle: hsla(256, 72%, 46%, 1);
+$Persian-blue-circle: hsla(241, 72%, 46%, 0);
+
+$White: hsl(0, 0%, 100%);
+$Pale-blue: hsl(221, 100%, 96%);
+$Light-lavender: hsl(241, 100%, 89%);
+$Dark-gray-blue: hsl(224, 30%, 27%);
+
+$font-family: "Hanken Grotesk", sans-serif;
+
+.main__container{
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $Pale-blue;
+  font-family: $font-family;
+}
+
+.card {
+  box-shadow: rgba(0, 0, 0, 0.24) 0 3px 8px;
+  border-radius: 2rem;
+  width: 650px;
+  background-color: $White;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+
+    & .result {
+      width: 50%;
+      padding: 1.5rem 2rem;
+      border-radius: 2rem;
+      background: linear-gradient(to bottom, $Light-slate-blue-background, $Light-royal-blue-background);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+
+      &__title {
+        color: $Light-lavender;
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+        font-weight: 600;
+
+      }
+
+      &__circle {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        background: linear-gradient(to bottom, $Violet-blue-circle, $Persian-blue-circle);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        h1 {
+          color: $White;
+          font-size: 4rem;
+        }
+
+        p {
+          color: $Light-lavender;
+        }
+      }
+
+      & b {
+        color: $White;
+        font-size: 1.5rem;
+        margin-top: 1rem;
+      }
+
+      &__info {
+        color: $Light-lavender;
+        width: 200px;
+      }
+    }
+
+    & .summary {
+      width: 50%;
+      padding: 1.5rem 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+
+      &__title {
+        color: #3A4562;
+        font-weight: 700;
+        font-size: 1.5rem;
+      }
+
+      &__rows {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+
+        & .summary__row {
+          border-radius: 10px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 1rem 0.5rem;
+
+          .summary__badge{
+            display: flex;
+            gap: 8px;
+          }
+
+          &:nth-child(1) {
+            background-color: #FFEEEE;
+            & .summary__badge b {
+              color: $Light-red;
+            }
+          }
+
+          &:nth-child(2) {
+            background-color: #FEF7E8;
+
+            & .summary__badge b {
+              color: $Orangey-yellow;
+            }
+          }
+
+          &:nth-child(3) {
+            background-color: #E5F8F3;
+
+            & .summary__badge b {
+              color: $Green-teal;
+            }
+          }
+
+          &:nth-child(4) {
+            background-color: #E7E9FA;
+
+            & .summary__badge b {
+              color: $Cobalt-blue;
+            }
+          }
+
+          & .badge {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+          }
+
+          & p {
+            color: gray;
+            margin-bottom: 0;
+
+            & b {
+              color: $Dark-gray-blue;
+            }
+          }
+        }
+      }
+
+      &__btn {
+        margin-top: auto;
+        padding: 1rem;
+        border: none;
+        border-radius: 2rem;
+        background: $Dark-gray-blue;
+        cursor: pointer;
+        font-size: 1rem;
+        color: white;
+
+        &:hover {
+          background: linear-gradient(to bottom, $Light-slate-blue-background, $Light-royal-blue-background);
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 650px) {
+    .main__container {
+      align-items: flex-start;
+      background-color: $White;
+    }
+
+    & {
+      box-shadow: none;
+    }
+
+    &__container {
+      flex-direction: column;
+
+      & .result {
+        border-radius: 0 0 1rem 1rem;
+        width: 100%;
+
+        &__info {
+          width: 250px;
+        }
+      }
+
+      & .summary {
+        width: 100%;
+      }
+    }
+  }
+}

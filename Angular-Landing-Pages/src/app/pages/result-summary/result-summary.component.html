@@ -1,0 +1,29 @@
+<div class="main__container">
+  <div class="card">
+    <div class="card__container">
+      <section class="result">
+        <h3 class="result__title">Your Result</h3>
+        <div class="result__circle">
+          <h1>76</h1>
+          <p>of 100</p>
+        </div>
+        <b>Great</b>
+        <p class="result__info">
+          You scored higher than 65% of the people who have taken thest tests.
+        </p>
+      </section>
+      <section class="summary">
+        <h3 class="summary__title">Summary</h3>
+        <div class="summary__rows">
+          <div *ngFor="let row of results" class="summary__row">
+            <div class="summary__badge">
+              <img [src]="row.icon" alt="icon" /><b>{{row.category}}</b>
+            </div>
+            <p><b>{{row.score}}</b> / 100</p>
+          </div>
+        </div>
+        <button class="summary__btn">Continue</button>
+      </section>
+    </div>
+  </div>
+</div>

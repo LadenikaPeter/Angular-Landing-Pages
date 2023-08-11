@@ -1,0 +1,158 @@
+$primary-color: hsl(223, 47%, 23%);
+$secondary-color: #8a8a8a;
+$accent-color: hsl(245, 75%, 52%);
+
+.main__container {
+  font-family: "Red Hat Display", sans-serif;
+  min-height: 100vh;
+  background-image: url("/assets/images/order-summary/pattern-background-desktop.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: hsl(225, 100%, 94%);
+  position: relative;
+  font-size: 16px;
+
+  .container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 400px;
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    padding: 0;
+
+    &__hero {
+      img {
+        width: 100%;
+      }
+    }
+
+    &__text-content {
+      padding: 7%;
+      text-align: center;
+
+      .title {
+        color: $primary-color;
+        font-weight: 900;
+        font-size: 32px;
+        margin-bottom: 20px;
+      }
+
+      .subtitle {
+        color: $secondary-color;
+        margin-bottom: 25px;
+      }
+
+      .plan-box {
+        background-color: hsl(225, 100%, 98%);
+        border-radius: 12px;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 25px;
+        align-items: center;
+        justify-content: space-between;
+
+        &__left {
+          display: flex;
+          align-items: center;
+          text-align: left;
+          flex-wrap: wrap;
+          gap: 10px;
+
+          .plan-box__details {
+
+            h5 {
+              font-weight: 900;
+              font-size: 15px;
+              color: $primary-color;
+            }
+
+            p {
+              font-size: 14px;
+              color: $secondary-color;
+              margin: 0;
+            }
+          }
+        }
+      }
+
+      .plan-box__link {
+        font-weight: 900;
+        color: $primary-color;
+        transition: color 0.3s ease;
+
+        &:hover {
+          text-decoration: none;
+          color: $accent-color;
+        }
+      }
+
+      .proceed-btn {
+        display: block;
+        text-decoration: none;
+        color: white;
+        background-color: $accent-color;
+        padding: 20px 0;
+        border-radius: 12px;
+        margin: 30px 0;
+        transition: background-color 0.3s ease;
+        box-shadow:
+          rgba(0, 0, 0, 0.2) 0 12px 28px 0,
+          rgba(0, 0, 0, 0.1) 0 2px 4px 0,
+          rgba(255, 255, 255, 0.05) 0 0 0 1px inset;
+
+        &:hover {
+          background-color: hsl(224, 23%, 55%);
+        }
+      }
+
+      .cancel-btn {
+        color: hsl(224, 23%, 55%);
+        text-decoration: none;
+        font-weight: 900;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: $primary-color;
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 425px) {
+    body {
+      background-image: url("/assets/images/order-summary/pattern-background-desktop.svg");
+      font-size: 14px;
+    }
+
+    .container {
+      max-width: 87%;
+    }
+
+    .title {
+      font-size: 23px;
+    }
+
+    .plan-box {
+      padding: 12px;
+    }
+
+    .plan-box__left {
+      div {
+        margin-left: 10px;
+      }
+    }
+
+    .plan-box__link,
+    .proceed-btn,
+    .cancel-btn {
+      font-size: 13px;
+    }
+
+    .text-content {
+      padding: 9% 7%;
+    }
+  }
+}
