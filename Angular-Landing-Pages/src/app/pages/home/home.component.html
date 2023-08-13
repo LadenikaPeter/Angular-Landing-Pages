@@ -1,1 +1,23 @@
-<p>home works!</p>
+<div class="main__container">
+  <div class="hero__wrapper">
+    <section class="hero__section container">
+      <h1>Welcome to my space</h1>
+      <p>...take a journey with me</p>
+      <button (click)="scrollToProjects()">View projects</button>
+    </section>
+  </div>
+
+  <section #projectSection [ngClass]="{appear : showProjectsSection}" class="projects__wrapper">
+    <h2>My Projects</h2>
+    <div class="projects__container container">
+      <div *ngFor="let project of projects" [routerLink]="project.link" class="projects">
+        <img [alt]="project.imageAltText" [src]="project.imageUrl">
+        <h4>{{project.title}}</h4>
+      </div>
+    </div>
+  </section>
+</div>
+
+
+
+

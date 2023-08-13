@@ -1,0 +1,81 @@
+.hero__wrapper{
+  background: url("/assets/images/home/space-background.jpg");
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+.hero__section{
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  //color: white;
+  color: #FFFF00;
+  max-width: 59rem;
+
+  h1{
+    font-size: clamp(2rem, 1.3077rem + 2.9538vw, 5rem);
+  }
+
+  p{
+    font-style: italic;
+  }
+
+  button{
+    //width: 20%;
+    padding: 0.6rem;
+    border: none;
+    border-radius: 10px;
+    margin-top: 2rem;
+
+    &:hover{
+      cursor: pointer;
+      //color: #FFFF00;
+    }
+  }
+}
+
+.projects__wrapper{
+  padding: 4rem 0;
+  background: #FAFAFA;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s, transform 0.5s;
+
+  h2{
+    color: grey;
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+  }
+}
+
+.projects__wrapper.appear {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.projects__container{
+  display: grid;
+  grid-template-columns: repeat( auto-fit, minmax(300px, 1fr) );
+  gap: 3rem;
+
+  .projects{
+    border: 1px solid #d4d4d4;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 3px 9px grey;
+
+    img{
+      border-top-left-radius: 12px;
+      border-top-right-radius: 12px;
+      object-fit: cover;
+      height: 260px;
+      width: 100%;
+    }
+
+    h4{
+      text-align: center;
+      padding: 1rem 0;
+    }
+  }
+}
