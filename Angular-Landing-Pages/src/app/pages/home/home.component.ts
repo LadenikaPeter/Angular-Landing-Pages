@@ -27,7 +27,7 @@ export class HomeComponent {
     const componentPosition = this.projectSectionRef.nativeElement.offsetTop;
     const scrollPosition = window.scrollY;
 
-    if (scrollPosition >= componentPosition - 900) {
+    if (scrollPosition >= componentPosition - 500) {
       this.showProjectsSection = true;
     }
   }
