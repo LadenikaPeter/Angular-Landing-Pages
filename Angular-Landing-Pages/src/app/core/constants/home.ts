@@ -36,5 +36,23 @@ export const PROJECTS: projects[] = [
     imageAltText: "stats-preview-card-image",
     title: "Stats preview card component",
     link: "/stats-preview"
+  },
+  {
+    imageUrl: "/assets/images/home/projects/social-proof.jpg",
+    imageAltText: "social-proof-image",
+    title: "Social proof section",
+    link: "/social-proof"
+  },
+  {
+    imageUrl: "/assets/images/home/projects/accordion-card.jpg",
+    imageAltText: "accordion-card-image",
+    title: "FAQ accordion card",
+    link: "/accordion-card"
+  },
+  {
+    imageUrl: "/assets/images/home/projects/sign-up-form.jpg",
+    imageAltText: "form-image",
+    title: "Sign up form",
+    link: "/form"
   }
 ]

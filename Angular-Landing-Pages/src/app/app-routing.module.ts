@@ -50,6 +50,26 @@ const routes: Routes = [
         (m) => m.InteractiveRatingComponent,
       ),
   },
+  {
+    path: 'social-proof',
+    loadComponent: () =>
+      import('./pages/social-proof/social-proof.component').then(
+        (m => m.SocialProofComponent))
+  },
+  {
+   path: 'accordion-card',
+    loadComponent: () =>
+      import('./pages/accordion-card/accordion-card.component').then(
+        (m => m.AccordionCardComponent)
+      )
+  },
+  {
+    path: 'form',
+    loadComponent: () =>
+      import('./pages/sign-up-form/sign-up-form.component').then(
+        (m => m.SignUpFormComponent)
+      )
+  }
 ];
 
 @NgModule({

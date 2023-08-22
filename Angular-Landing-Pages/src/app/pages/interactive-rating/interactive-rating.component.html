@@ -1,7 +1,7 @@
 <div class="main__container">
   <div class="wrapper">
     <div *ngIf="!showThankYou" class="rating__container">
-      <img src="assets/images/interactive-rating/icon-star.svg" />
+      <img alt="star-icon" src="assets/images/interactive-rating/icon-star.svg"/>
       <h3>How did we do?</h3>
       <p>
         Please let us know how we did with your support request. All feedback is
@@ -14,12 +14,13 @@
           [ngClass]="{ active: num === selectedRating }"
         >
           {{ num }}
+          <span class="tooltip--text">{{num}}</span>
         </li>
       </ul>
       <button (click)="submitRating()" class="submit__btn">SUBMIT</button>
     </div>
     <div *ngIf="showThankYou" class="result__container">
-      <img class="thanks" src="assets/images/interactive-rating/illustration-thank-you.svg" />
+      <img alt="thank-you-image" class="thanks" src="assets/images/interactive-rating/illustration-thank-you.svg" />
       <div class="result">
         <p class="result__rating">You selected {{ selectedRating }} out of 5</p>
         <h3>Thank You!</h3>
