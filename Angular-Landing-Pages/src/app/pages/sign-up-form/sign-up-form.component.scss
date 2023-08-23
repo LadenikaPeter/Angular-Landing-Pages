@@ -94,7 +94,11 @@ $Green: hsl(154, 59%, 51%);
       }
     }
 
-    .ng-invalid.ng-touched{
+    .email--input::placeholder {
+      color: $Red;
+    }
+
+    .ng-invalid.ng-touched, .borderRed{
       border: 2px solid $Red;
     }
 
