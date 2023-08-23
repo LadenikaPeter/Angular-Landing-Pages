@@ -1,0 +1,40 @@
+<div class="main__container">
+  <div class="container">
+    <div class="wrapper">
+      <div class="first__section">
+        <div class="first__section--text">
+          <h1>10,000+ of our users love our products.</h1>
+          <p>We only provide great products combined with excellent customer service.
+            See what our satisfied customers are saying about our services.</p>
+        </div>
+        <div class="first__section--rating">
+          <div class="rating--container">
+            <div *ngFor="let user of users" [ngClass]="{ 'margin-100': user.id === 1, 'margin-50': user.id === 2 }" class="stars--container">
+              <div class="stars">
+                <img *ngFor="let star of stars" [alt]="star.imageAltText" [src]="star.imageUrl">
+              </div>
+              <h6>{{user.title}}</h6>
+            </div>
+            <div class="user--container"></div>
+          </div>
+        </div>
+      </div>
+      <div class="second__section">
+        <div *ngFor="let review of review" [ngClass]="{ 'margin-bottom-40' : review.id === 1 , 'margin-20': review.id === 2, 'margin-40': review.id === 3 }" class="review__container">
+          <div class="review__container--profile">
+            <div class="profile--image">
+              <img [alt]="review.imageAltText" [src]="review.imageUrl">
+            </div>
+            <div class="profile--description">
+              <h5>{{review.name}}</h5>
+              <h5 class="constant--text">Verified Buyer</h5>
+            </div>
+          </div>
+          <div class="profile--comment">
+            <q> {{review.comment}} </q>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

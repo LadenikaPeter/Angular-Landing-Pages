@@ -1,0 +1,58 @@
+<div class="main__container">
+  <div class="wrapper container">
+    <div class="row row__wrapper">
+      <div class="text--heading col-md-6">
+        <h1>Learn to code by watching others</h1>
+        <p>  See how experienced developers solve problems in real-time. Watching scripted tutorials is great,
+          but understanding how developers think is invaluable.</p>
+      </div>
+      <div class="col-md-6">
+        <div class="trial__container">
+          <h5>Try it free 7 days then $20/mo. thereafter</h5>
+        </div>
+        <div class="form__container">
+          <form (ngSubmit)="onSubmit()" [formGroup]="signUpForm">
+            <div class="form__wrapper">
+              <div class="form--firstName">
+                <input class="w-100" formControlName="firstName" placeholder="First Name" type="text">
+                <span *ngIf="!signUpForm.get('firstName').valid && signUpForm.get('firstName').touched"
+                  class="error"
+                >First Name cannot be empty
+                <img alt="error-icon" src="assets/images/sign-up-form/icon-error.svg">
+                </span>
+              </div>
+              <div class="form--lastName">
+                <input class="w-100" formControlName="lastName" placeholder="Last Name" type="text">
+                <span *ngIf="!signUpForm.get('lastName').valid && signUpForm.get('lastName').touched"
+                  class="error"
+                >Last Name cannot be empty
+                <img alt="error-icon" src="assets/images/sign-up-form/icon-error.svg">
+                </span>
+              </div>
+              <div class="form--email">
+                <input class="w-100" formControlName="email" placeholder="Email Address" type="email">
+                <span *ngIf="!signUpForm.get('email').valid && signUpForm.get('email').touched"
+                  class="error"
+                >Looks like this is not an email
+                <img alt="error-icon" src="assets/images/sign-up-form/icon-error.svg">
+                </span>
+              </div>
+              <div class="form--password">
+                <input class="w-100" formControlName="password" placeholder="Password" type="password">
+                <span *ngIf="!signUpForm.get('password').valid && signUpForm.get('password').touched"
+                  class="error"
+                >Password cannot be empty
+                <img alt="error-icon" src="assets/images/sign-up-form/icon-error.svg">
+                </span>
+              </div>
+              <div class="form--button">
+                <button (click)="onSubmit()" [disabled]="!signUpForm.valid" class="w-100">claim your free trial</button>
+                <p>By clicking the button, you are agreeing to our <span class="terms">Terms and Services</span></p>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
