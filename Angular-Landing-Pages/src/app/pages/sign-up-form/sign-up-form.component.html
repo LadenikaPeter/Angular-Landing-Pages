@@ -14,39 +14,41 @@
           <form (ngSubmit)="onSubmit()" [formGroup]="signUpForm">
             <div class="form__wrapper">
               <div class="form--firstName">
-                <input class="w-100" formControlName="firstName" placeholder="First Name" type="text">
-                <span *ngIf="!signUpForm.get('firstName').valid && signUpForm.get('firstName').touched"
+                <input [ngClass]="{borderRed: !invalid && !signUpForm.get('firstName').valid}" class="w-100" formControlName="firstName" placeholder="First Name" type="text">
+                <span *ngIf="!signUpForm.get('firstName').valid && signUpForm.get('firstName').touched || !invalid && !signUpForm.get('firstName').valid"
                   class="error"
                 >First Name cannot be empty
                 <img alt="error-icon" src="assets/images/sign-up-form/icon-error.svg">
                 </span>
               </div>
               <div class="form--lastName">
-                <input class="w-100" formControlName="lastName" placeholder="Last Name" type="text">
-                <span *ngIf="!signUpForm.get('lastName').valid && signUpForm.get('lastName').touched"
+                <input [ngClass]="{borderRed: !invalid && !signUpForm.get('lastName').valid}" class="w-100" formControlName="lastName" placeholder="Last Name" type="text">
+                <span *ngIf="!signUpForm.get('lastName').valid && signUpForm.get('lastName').touched || !invalid && !signUpForm.get('lastName').valid"
                   class="error"
                 >Last Name cannot be empty
                 <img alt="error-icon" src="assets/images/sign-up-form/icon-error.svg">
                 </span>
               </div>
               <div class="form--email">
-                <input class="w-100" formControlName="email" placeholder="Email Address" type="email">
-                <span *ngIf="!signUpForm.get('email').valid && signUpForm.get('email').touched"
+                <input [ngClass]="{'borderRed email--input': !invalid && !signUpForm.get('email').valid}"
+                       [placeholder]="!signUpForm.get('email').valid && signUpForm.get('email').touched || !invalid && !signUpForm.get('email').valid ? 'example@example/com': 'Email Address'"
+                       class="w-100" formControlName="email" type="email">
+                <span *ngIf="!signUpForm.get('email').valid && signUpForm.get('email').touched || !invalid && !signUpForm.get('email').valid"
                   class="error"
                 >Looks like this is not an email
                 <img alt="error-icon" src="assets/images/sign-up-form/icon-error.svg">
                 </span>
               </div>
               <div class="form--password">
-                <input class="w-100" formControlName="password" placeholder="Password" type="password">
-                <span *ngIf="!signUpForm.get('password').valid && signUpForm.get('password').touched"
+                <input [ngClass]="{borderRed: !invalid && !signUpForm.get('password').valid}" class="w-100" formControlName="password" placeholder="Password" type="password">
+                <span *ngIf="!signUpForm.get('password').valid && signUpForm.get('password').touched || !invalid && !signUpForm.get('password').valid "
                   class="error"
                 >Password cannot be empty
                 <img alt="error-icon" src="assets/images/sign-up-form/icon-error.svg">
                 </span>
               </div>
               <div class="form--button">
-                <button (click)="onSubmit()" [disabled]="!signUpForm.valid" class="w-100">claim your free trial</button>
+                <button (click)="onSubmit()" class="w-100" type="button">claim your free trial</button>
                 <p>By clicking the button, you are agreeing to our <span class="terms">Terms and Services</span></p>
               </div>
             </div>

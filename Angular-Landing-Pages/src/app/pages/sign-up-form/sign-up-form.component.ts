@@ -11,6 +11,7 @@ import {FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} fr
 })
 export class SignUpFormComponent implements OnInit{
   signUpForm: FormGroup;
+  invalid: boolean = true;
 
   ngOnInit() {
     this.signUpForm = new FormGroup<any>({
@@ -22,7 +23,14 @@ export class SignUpFormComponent implements OnInit{
   }
 
   onSubmit(){
+    if(!this.signUpForm.valid){
+      this.invalid = this.signUpForm.valid;
+      return
+    }
+    alert("Successful!")
+    this.invalid = true;
+    console.log(this.signUpForm.value)
     this.signUpForm.reset()
-    alert('form has been submitted!')
   }
 }
+
