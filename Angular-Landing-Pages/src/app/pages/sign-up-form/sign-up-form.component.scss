@@ -89,6 +89,10 @@ $Green: hsl(154, 59%, 51%);
       border: 1px solid $Grayish-Blue;
       border-radius: 4px;
 
+      &::placeholder{
+        font-size: 14px;
+      }
+
       &:focus{
         border: 2px solid $Dark-Blue;
       }
