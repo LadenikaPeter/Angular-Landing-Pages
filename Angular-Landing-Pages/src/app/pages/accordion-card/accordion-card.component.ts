@@ -11,4 +11,12 @@ import {FAQ} from "../../core/constants/accordion-card";
 })
 export class AccordionCardComponent {
   readonly faq = FAQ;
+  selectedItem: number = -1;
+  clickHandler(i: number){
+    if(i != this.selectedItem){
+      this.selectedItem = i
+    } else {
+      this.selectedItem = -1
+    }
+  }
 }
