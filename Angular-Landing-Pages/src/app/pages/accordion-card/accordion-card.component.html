@@ -2,33 +2,27 @@
 
   <div class="accordion__card">
     <div class="images__container">
-      <!--      <img alt="woman-image" src="/assets/images/accordion-card/illustration-woman-online-desktop.svg">-->
-      <img alt="woman-image" class="images__container--image"   src="/assets/images/accordion-card/illustration-woman-online-mobile.svg">
-      <img alt="background-image"  class="images__container--bg mobile" src="/assets/images/accordion-card/bg-pattern-mobile.svg">
-      <img alt="background-image" class="images__container--bg desktop" src="/assets/images/accordion-card/bg-pattern-desktop.svg">
+      <div class="image__inner"></div>
+      <img alt="box-image" src="assets/images/accordion-card/illustration-box-desktop.svg"/>
     </div>
     <div class="accordion__container">
       <h3 class="accordion--heading">FAQ</h3>
       <ul>
-        <li *ngFor="let item of faq; let i = index" class="accordion__item">
-          <ng-container *ngTemplateOutlet="accordionList__item; context: {$implicit: item}"></ng-container>
+        <li (click)="clickHandler(i)" *ngFor="let item of faq; let i = index" class="accordion__item">
+          <ng-container *ngTemplateOutlet="accordionList__item; context: {$implicit: item, index: i}"></ng-container>
         </li>
       </ul>
     </div>
   </div>
-
-
 </div>
-
-
-<ng-template #accordionList__item let-item>
+<ng-template #accordionList__item let-index="index" let-item>
   <div class="accordion__header">
     <div class="accordion--question">
-      <h4>{{item.question}}</h4>
+      <h4 [ngClass]="{'active--question':index == selectedItem }" >{{item.question}}</h4>
     </div>
     <div class="arrow--image">
-      <img alt="arrow-image" src="assets/images/accordion-card/icon-arrow-down.svg" />
+      <img [ngClass]="{'active--arrow' : index == selectedItem}"  alt="arrow-image" src="assets/images/accordion-card/icon-arrow-down.svg" />
     </div>
   </div>
-  <h4 class="test">{{item.answer}}</h4>
+  <h4 [ngClass]="{'active--answer': index == selectedItem}" class="accordion--answer">{{item.answer}}</h4>
 </ng-template>
