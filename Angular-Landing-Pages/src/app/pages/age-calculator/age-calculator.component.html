@@ -1,0 +1,44 @@
+<div class="main__container">
+  <div class="calc__container">
+    <div class="calc__inputs">
+      <form [formGroup]="ageForm">
+        <div class="form__wrapper">
+          <div class="form--day">
+            <label>DAY</label>
+            <input (input)="isSecondValidation()" (keypress)="onlyDigits($event)" [ngClass]="{'border-red' : !invalid && !this.ageForm.get('day').valid || isDateNotValid }" formControlName="day" placeholder="DD" type="number">
+            <span *ngIf="!this.ageForm.get('day').valid && this.ageForm.get('day').touched || !invalid && !this.ageForm.get('day').valid || isDateNotValid">{{ isDateNotValid ? isDateNotValidText : this.ageForm.get('day').errors['error']}}</span>
+          </div>
+          <div class="form--month">
+            <label>MONTH</label>
+            <input (keypress)="onlyDigits($event)" [ngClass]="{'border-red' : !invalid && !this.ageForm.get('month').valid}" formControlName="month" placeholder="MM" type="number">
+            <span *ngIf="!this.ageForm.get('month').valid && this.ageForm.get('month').touched || !invalid && !this.ageForm.get('month').valid">{{this.ageForm.get('month').errors['error']}}</span>
+          </div>
+          <div class="form--year">
+            <label>YEAR</label>
+            <input (keypress)="onlyDigits($event)" [ngClass]="{'border-red' : !invalid && !this.ageForm.get('year').valid}" formControlName="year" placeholder="YYYY" type="number">
+            <span *ngIf="!this.ageForm.get('year').valid && this.ageForm.get('year').touched || !invalid && !this.ageForm.get('year').valid">{{this.ageForm.get('year').errors['error']}}</span>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="arrow__container">
+      <hr>
+      <button (click)="onSubmit()" type="button">
+        <img alt="arrow-image" src="assets/images/age-calculator/icon-arrow.svg">
+      </button>
+    </div>
+
+    <div class="calc__output">
+       <div class="calc--year">
+         <h1>{{calculatedYear ? calculatedYear : '--'}}<span> {{yearsText}} </span></h1>
+       </div>
+       <div class="calc--month">
+         <h1>{{calculatedMonth ? calculatedMonth : '--'}}<span> {{monthText}} </span></h1>
+       </div>
+       <div class="calc--day">
+         <h1>{{calculatedDay ? calculatedDay : '--'}}<span> {{daysText}} </span></h1>
+       </div>
+    </div>
+  </div>
+</div>

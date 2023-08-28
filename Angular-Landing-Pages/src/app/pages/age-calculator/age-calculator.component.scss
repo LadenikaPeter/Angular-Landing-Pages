@@ -1,0 +1,171 @@
+$White: hsl(0, 0%, 100%);
+$Off-white: hsl(0, 0%, 94%);
+$Light-grey: hsl(0, 0%, 86%);
+$Smokey-grey: hsl(0, 1%, 44%);
+$Off-black: hsl(0, 0%, 8%);
+$Purple: hsl(259, 100%, 65%);
+$Light-red: hsl(0, 100%, 67%);
+$Fon-size-inputs: 2rem;
+
+.main__container{
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  width: 100%;
+  background: $Off-white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .calc__container{
+    width: 38rem;
+    max-width: 38rem;
+    background: $White;
+    border-radius: 20px 20px 125px 20px;
+    padding: 3rem;
+    margin: 3rem;
+
+    @media screen and (max-width: 460px){
+      padding: 2rem;
+    }
+  }
+
+  .calc__inputs{
+    width: 80%;
+
+    @media screen and (max-width: 581px){
+      width: 100%;
+    }
+  }
+
+  .form__wrapper{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10px;
+  }
+
+  .form--day,
+  .form--month,
+  .form--year{
+    width: 30%;
+
+    label{
+      font-size: clamp(10px, 5vw, 12px);
+      //font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 5px;
+      letter-spacing: 2px;
+      color: $Smokey-grey;
+    }
+
+    input{
+      border-radius: 5px;
+      border: 1px solid $Light-grey;
+      width: 100%;
+      cursor: pointer;
+      padding: 10px;
+      font-size: 20px;
+      font-weight: 700;
+
+      @media screen and (max-width: 460px){
+        font-size: 15px;
+      }
+
+
+      &:focus{
+        outline: none;
+        border: 1px solid $Purple;
+      }
+    }
+
+    input::placeholder{
+      color: $Smokey-grey;
+    }
+
+    /* Chrome, Safari, Edge, Opera */
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    /* Firefox */
+    input[type=number] {
+      -moz-appearance: textfield;
+    }
+
+    span{
+      font-size: 11px;
+      font-style: italic;
+      color: $Light-red;
+    }
+
+    .border-red{
+      border: 2px solid $Light-red;
+    }
+
+  }
+
+  .arrow__container{
+    display: flex;
+    align-items: center;
+
+    @media screen and (max-width: 581px){
+     position: relative;
+      margin: 3rem 0
+    }
+
+    hr{
+      width: 100%;
+    }
+
+    button{
+      border-radius: 50%;
+      padding: 1rem;
+      background-color: $Purple;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+        &:hover{
+          background: $Off-black;
+        }
+
+      @media screen and (max-width: 581px){
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        padding: 15px 7px;
+
+        img{
+          width: 60%;
+        }
+      }
+    }
+  }
+
+  .calc__output{
+    width: 80%;
+
+    @media screen and (max-width: 581px){
+      width: 100%;
+    }
+
+    .calc--year,
+    .calc--month,
+    .calc--day{
+
+      h1{
+        font-size: clamp(2rem, 5vw, 4rem);
+        font-weight: 800;
+        font-style: italic;
+        color: $Purple;
+      }
+      span{
+        color: $Off-black;
+      }
+    }
+  }
+}
