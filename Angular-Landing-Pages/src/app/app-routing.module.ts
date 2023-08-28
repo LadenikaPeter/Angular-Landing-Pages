@@ -69,6 +69,13 @@ const routes: Routes = [
       import('./pages/sign-up-form/sign-up-form.component').then(
         (m => m.SignUpFormComponent)
       )
+  },
+  {
+    path: 'age-calculator',
+    loadComponent: () =>
+      import('./pages/age-calculator/age-calculator.component').then(
+        (m => m.AgeCalculatorComponent)
+      )
   }
 ];
 

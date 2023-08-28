@@ -54,5 +54,11 @@ export const PROJECTS: projects[] = [
     imageAltText: "form-image",
     title: "Sign up form",
     link: "/form"
+  },
+  {
+    imageUrl: "/assets/images/home/projects/age-calculator.jpg",
+    imageAltText: "age-calculator-image",
+    title: "Age Calculator",
+    link: "/age-calculator"
   }
 ]
