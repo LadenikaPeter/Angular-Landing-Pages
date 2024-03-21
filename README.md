@@ -18,7 +18,17 @@ You can view the live deployment of this project [here](https://angular-landing-
    ```bash
    git clone https://github.com/your-username/angular-component-showcase.git
 
-1. Clone this repository to your local machine:
+2. Navigate to the project directory:
 
    ```bash
-   git clone https://github.com/your-username/angular-component-showcase.git
+   cd angular-component-showcase
+
+3. Install dependencies:
+
+   ```bash
+   npm install
+
+4. Run the project:
+
+   ```bash
+   ng serve
