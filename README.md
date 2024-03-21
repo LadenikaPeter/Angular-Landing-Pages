@@ -32,3 +32,9 @@ You can view the live deployment of this project [here](https://angular-landing-
 
    ```bash
    ng serve
+
+## Contributing
+Contributions are welcome! If you'd like to add new components, landing pages, or enhance existing ones, feel free to submit a pull request.
+
+## Feedback
+If you have any feedback, suggestions, or issues, please open an issue on this repository. We'd love to hear from you!
